@@ -6,11 +6,14 @@ namespace MarsRover
     {
         public void Validate(string input)
         {
-            var pattern = @"^[0-9]+$";
-            var regex = new Regex(pattern);
-            if(!regex.IsMatch(input))
+            var formattedInput = input.Replace(",","").ToLower();
+            var inputCommands = formattedInput.ToCharArray();
+            foreach(var inputCommand in inputCommands)
             {
-                throw new InvalidCommandException("You have entered an invalid rover command. Rover will do nothing.");
+                if(!ApplicationProperties.ValidRoverCommands.Contains(inputCommand))
+                {
+                    throw new InvalidCommandException("You have entered an invalid rover command. Rover will do nothing.");
+                }
             }
         }
     }
