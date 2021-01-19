@@ -1,6 +1,6 @@
 namespace MarsRover
 {
-    public class Square
+    public class Square : ISquare
     {
         public int Row { get; }
         public int Column { get; }

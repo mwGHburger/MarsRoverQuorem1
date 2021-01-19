@@ -3,7 +3,7 @@ namespace MarsRover
     public class Rover
     {
         public ICardinalDirection CurrentFacingDirection { get; private set; }
-        public Square CurrentSquareLocation { get; set; }
+        public ISquare CurrentSquareLocation { get; set; }
         public Rover(ICardinalDirection currentFacingDirection)
         {
             CurrentFacingDirection = currentFacingDirection;
@@ -19,9 +19,9 @@ namespace MarsRover
             CurrentFacingDirection = CurrentFacingDirection.TurnRight();
         }
 
-        public void MoveForward(Grid grid)
+        public void MoveForward(IGrid grid)
         {
-            CurrentSquareLocation = CurrentFacingDirection.GetSquareLocationInfront(CurrentSquareLocation,grid);
+            CurrentSquareLocation = CurrentFacingDirection.GetSquareLocationInfront(CurrentSquareLocation, grid);
         }
     }
 }

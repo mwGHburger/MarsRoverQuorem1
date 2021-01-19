@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace MarsRover
 {
-    public class Grid
+    public class Grid : IGrid
     {
         public int Rows { get; }
         public int Columns { get; }
@@ -16,7 +16,7 @@ namespace MarsRover
             CreateSquares();
         }
 
-        public Square Find(int row, int column)
+        public ISquare Find(int row, int column)
         {
             return Squares.Find(x => x.Row.Equals(row) && x.Column.Equals(column));
         }

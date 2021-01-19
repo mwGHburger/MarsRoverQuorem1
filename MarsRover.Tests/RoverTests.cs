@@ -8,25 +8,24 @@ namespace MarsRover.Tests
         [Fact]
         public void TurnLeft_ShouldChangeTheCardinalDirectionTheRoverIsFacing()
         {
-            var rover = new Rover(new FacingNorth());
-
-            var expected = DirectionName.West;
+            var mockDirection = new Mock<ICardinalDirection>();
+            var rover = new Rover(mockDirection.Object);
 
             rover.TurnLeft();
 
-            Assert.Equal(expected, rover.CurrentFacingDirection.Name);
+            mockDirection.Verify(x => x.TurnLeft(), Times.Exactly(1));
+
         }
 
         [Fact]
         public void TurnRight_ShouldChangeTheCardinalDirectionTheRoverIsFacing()
         {
-            var rover = new Rover(new FacingNorth());
-
-            var expected = DirectionName.East;
+            var mockDirection = new Mock<ICardinalDirection>();
+            var rover = new Rover(mockDirection.Object);
 
             rover.TurnRight();
 
-            Assert.Equal(expected, rover.CurrentFacingDirection.Name);
+            mockDirection.Verify(x => x.TurnRight(), Times.Exactly(1));
         }
 
         // Integration Test
@@ -34,16 +33,15 @@ namespace MarsRover.Tests
         public void MoveForward_ShouldChangeSquareLocationOfRover()
         {
             var mockFacingDirection = new Mock<ICardinalDirection>();
-            var rover = new Rover(new FacingNorth());
-            var grid = new Grid(4,4);
-            var startingSquare = grid.Find(1,1);
-            rover.CurrentSquareLocation = startingSquare;
+            var mockGrid = new Mock<IGrid>();
+            var mockSquare = new Mock<ISquare>();
+            var rover = new Rover(mockFacingDirection.Object);
+            rover.CurrentSquareLocation = mockSquare.Object;
 
-            var expected = grid.Find(2,1);
+            rover.MoveForward(mockGrid.Object);
 
-            rover.MoveForward(grid);
+            mockFacingDirection.Verify(x => x.GetSquareLocationInfront(It.IsAny<ISquare>(), It.IsAny<IGrid>()));
 
-            Assert.Equal(expected, rover.CurrentSquareLocation);
         }
     }
 }

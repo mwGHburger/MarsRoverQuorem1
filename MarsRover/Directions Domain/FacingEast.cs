@@ -14,7 +14,7 @@ namespace MarsRover
             return new FacingSouth();
         }
 
-        public Square GetSquareLocationInfront(Square currentSquare, Grid grid)
+        public ISquare GetSquareLocationInfront(ISquare currentSquare, IGrid grid)
         {
             var newColumn = (currentSquare.Column + 1 > grid.Columns) ? 1 : currentSquare.Column + 1;
             return grid.Find(currentSquare.Row, newColumn);
