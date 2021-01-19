@@ -25,7 +25,7 @@ namespace MarsRover.Tests
         }
 
         [Fact]
-        public void GetSquareLocationInfront_ShouldReturn_SquareToTheRight()
+        public void GetSquareLocationInfront_ShouldReturn_SquareBelow()
         {
             var facingSouth = new FacingSouth();
             var grid = new Grid(4,4);
@@ -33,6 +33,19 @@ namespace MarsRover.Tests
             var expected = grid.Find(4,1);
 
             var actual = facingSouth.GetSquareLocationInfront(currentSquare, grid);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetSquareLocationBehind_ShouldReturn_SquareAbove()
+        {
+            var facingSouth = new FacingSouth();
+            var grid = new Grid(4,4);
+            var currentSquare = grid.Find(1,1);
+            var expected = grid.Find(2,1);
+
+            var actual = facingSouth.GetSquareLocationBehind(currentSquare, grid);
 
             Assert.Equal(expected, actual);
         }

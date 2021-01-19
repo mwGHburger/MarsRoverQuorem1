@@ -7,5 +7,6 @@ namespace MarsRover
         ICardinalDirection TurnRight();
         
         ISquare GetSquareLocationInfront(ISquare currentSquare, IGrid grid);
+        ISquare GetSquareLocationBehind(ISquare currentSquare, IGrid grid);
     }
 }

@@ -19,5 +19,11 @@ namespace MarsRover
             var newColumn = (currentSquare.Column - 1).Equals(0) ? grid.Columns : currentSquare.Column - 1;
             return grid.Find(currentSquare.Row, newColumn);
         }
+
+        public ISquare GetSquareLocationBehind(ISquare currentSquare, IGrid grid)
+        {
+            var newColumn = (currentSquare.Column - 1).Equals(0) ? grid.Columns : currentSquare.Column - 1;
+            return grid.Find(currentSquare.Row, newColumn);
+        }
     }
 }

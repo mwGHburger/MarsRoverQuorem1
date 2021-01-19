@@ -37,5 +37,18 @@ namespace MarsRover.Tests
             Assert.Equal(expected, actual);
         }
 
+        [Fact]
+        public void GetSquareLocationBehind_ShouldReturn_SquareToTheLeft()
+        {
+            var facingEast = new FacingEast();
+            var grid = new Grid(4,4);
+            var currentSquare = grid.Find(1,1);
+            var expected = grid.Find(1,4);
+
+            var actual = facingEast.GetSquareLocationBehind(currentSquare, grid);
+
+            Assert.Equal(expected, actual);
+        }
+
     }
 }

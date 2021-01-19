@@ -28,7 +28,6 @@ namespace MarsRover.Tests
             mockDirection.Verify(x => x.TurnRight(), Times.Exactly(1));
         }
 
-        // Integration Test
         [Fact] 
         public void MoveForward_ShouldChangeSquareLocationOfRover()
         {
