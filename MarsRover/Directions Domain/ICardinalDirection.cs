@@ -5,5 +5,7 @@ namespace MarsRover
         DirectionName Name { get; }
         ICardinalDirection TurnLeft();
         ICardinalDirection TurnRight();
+        
+        Square GetSquareLocationInfront(Square currentSquare, Grid grid);
     }
 }

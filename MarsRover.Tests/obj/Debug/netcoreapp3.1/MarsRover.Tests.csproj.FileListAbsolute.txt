@@ -96,3 +96,5 @@
 /Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Quorem_1/MarsRoverQuorem1/MarsRover.Tests/obj/Debug/netcoreapp3.1/MarsRover.Tests.dll
 /Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Quorem_1/MarsRoverQuorem1/MarsRover.Tests/obj/Debug/netcoreapp3.1/MarsRover.Tests.pdb
 /Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Quorem_1/MarsRoverQuorem1/MarsRover.Tests/obj/Debug/netcoreapp3.1/MarsRover.Tests.genruntimeconfig.cache
+/Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Quorem_1/MarsRoverQuorem1/MarsRover.Tests/bin/Debug/netcoreapp3.1/Castle.Core.dll
+/Users/Michael.Wang/Desktop/MYOB/MYOB Katas/Quorem_1/MarsRoverQuorem1/MarsRover.Tests/bin/Debug/netcoreapp3.1/Moq.dll
