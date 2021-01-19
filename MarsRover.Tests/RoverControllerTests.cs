@@ -14,7 +14,7 @@ namespace MarsRover.Tests
             {
                 mockRoverCommand.Object
             };
-            var mockUserInput = new List<char>()
+            var userInputCommands = new List<char>()
             {
                 'r'
             };
@@ -22,7 +22,7 @@ namespace MarsRover.Tests
 
             mockRoverCommand.Setup(x => x.KeyCommand).Returns('r');
 
-            roverController.ExecuteInputCommands(mockUserInput);
+            roverController.ExecuteInputCommands(userInputCommands);
 
             mockRoverCommand.Verify(x => x.Execute(), Times.Exactly(1));
         }
