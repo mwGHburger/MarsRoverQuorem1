@@ -7,7 +7,7 @@ namespace MarsRover.Tests
         [Theory]
         [InlineData("")]
         [InlineData(" ")]
-        public void Validate_ShouldThrowEmptyInputExceptionForEmptyInput(string input)
+        public void Validate_ShouldThrow_EmptyInputException_ForEmptyInput(string input)
         {
             var emptyInputValidator = new EmptyInputValidator();
 
