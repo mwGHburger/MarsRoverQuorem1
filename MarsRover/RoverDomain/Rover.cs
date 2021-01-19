@@ -1,6 +1,6 @@
 namespace MarsRover
 {
-    public class Rover
+    public class Rover : IRover
     {
         public ICardinalDirection CurrentFacingDirection { get; private set; }
         public ISquare CurrentSquareLocation { get; set; }
