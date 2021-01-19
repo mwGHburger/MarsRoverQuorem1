@@ -4,5 +4,6 @@ namespace MarsRover
     {
         DirectionName Name { get; }
         ICardinalDirection TurnLeft();
+        ICardinalDirection TurnRight();
     }
 }

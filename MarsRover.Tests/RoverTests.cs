@@ -15,5 +15,17 @@ namespace MarsRover.Tests
 
             Assert.Equal(expected, rover.CurrentFacingDirection.Name);
         }
+
+        [Fact]
+        public void TurnRight_ShouldChangeTheCardinalDirectionTheRoverIsFacing()
+        {
+            var rover = new Rover(new FacingNorth());
+
+            var expected = DirectionName.East;
+
+            rover.TurnRight();
+
+            Assert.Equal(expected, rover.CurrentFacingDirection.Name);
+        }
     }
 }

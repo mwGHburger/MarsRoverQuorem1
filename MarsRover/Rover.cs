@@ -12,5 +12,10 @@ namespace MarsRover
         {
             CurrentFacingDirection = CurrentFacingDirection.TurnLeft();
         }
+
+        public void TurnRight()
+        {
+            CurrentFacingDirection = CurrentFacingDirection.TurnRight();
+        }
     }
 }

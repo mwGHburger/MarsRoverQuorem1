@@ -8,5 +8,10 @@ namespace MarsRover
         {
             return new FacingNorth();
         }
+
+        public ICardinalDirection TurnRight()
+        {
+            return new FacingSouth();
+        }
     }
 }
