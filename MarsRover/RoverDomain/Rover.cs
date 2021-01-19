@@ -23,5 +23,10 @@ namespace MarsRover
         {
             CurrentSquareLocation = CurrentFacingDirection.GetSquareLocationInfront(CurrentSquareLocation, grid);
         }
+
+        public void MoveBackwards(IGrid grid)
+        {
+            CurrentSquareLocation = CurrentFacingDirection.GetSquareLocationBehind(CurrentSquareLocation, grid);
+        }
     }
 }

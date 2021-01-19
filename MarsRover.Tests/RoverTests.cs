@@ -40,7 +40,20 @@ namespace MarsRover.Tests
             rover.MoveForward(mockGrid.Object);
 
             mockFacingDirection.Verify(x => x.GetSquareLocationInfront(It.IsAny<ISquare>(), It.IsAny<IGrid>()));
+        }
 
+        [Fact] 
+        public void MoveBackwards_ShouldChangeSquareLocationOfRover()
+        {
+            var mockFacingDirection = new Mock<ICardinalDirection>();
+            var mockGrid = new Mock<IGrid>();
+            var mockSquare = new Mock<ISquare>();
+            var rover = new Rover(mockFacingDirection.Object);
+            rover.CurrentSquareLocation = mockSquare.Object;
+
+            rover.MoveBackwards(mockGrid.Object);
+
+            mockFacingDirection.Verify(x => x.GetSquareLocationBehind(It.IsAny<ISquare>(), It.IsAny<IGrid>()));
         }
     }
 }
