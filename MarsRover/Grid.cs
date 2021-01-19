@@ -16,6 +16,11 @@ namespace MarsRover
             CreateSquares();
         }
 
+        public Square Find(int row, int column)
+        {
+            return Squares.Find(x => x.Row.Equals(row) && x.Column.Equals(column));
+        }
+
         private void CreateSquares()
         {
             for(var row = 1; row <= _rows; row++)
