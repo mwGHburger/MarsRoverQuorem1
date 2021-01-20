@@ -1,6 +1,6 @@
 namespace MarsRover
 {
-    public class ObstacleDetector
+    public class ObstacleDetector : IObstacleDetector
     {
         public void AssessSquareInfront(ICardinalDirection currentDirection, ISquare currentSquare, IGrid grid)
         {

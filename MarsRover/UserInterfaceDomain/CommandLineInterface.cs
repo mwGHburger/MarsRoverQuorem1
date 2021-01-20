@@ -6,13 +6,17 @@ namespace MarsRover
     {
         public void Print(string input)
         {
-            Console.WriteLine();
+            Console.WriteLine(input);
         }
 
-        public string GetInput(string prompt)
+        public string GetInput()
         {
-            Print(prompt);
             return Console.ReadLine();
+        }
+
+        public void ClearScreen()
+        {
+            Console.Clear();
         }
     }
 }

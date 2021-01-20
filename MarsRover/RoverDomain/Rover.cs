@@ -3,7 +3,6 @@ namespace MarsRover
     public class Rover : IRover
     {
         private IObstacleDetector _obstacleDetector;
-
         public ICardinalDirection CurrentFacingDirection { get; private set; }
         public ISquare CurrentSquareLocation { get; set; }
         public Rover(ICardinalDirection currentFacingDirection, IObstacleDetector obstacleDetector)

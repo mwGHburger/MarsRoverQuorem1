@@ -2,6 +2,8 @@ namespace MarsRover
 {
     public interface IRover
     {
+        ISquare CurrentSquareLocation { get; set; }
+        ICardinalDirection CurrentFacingDirection { get; }
         void TurnLeft();
         void TurnRight();
         void MoveForward(IGrid grid);
