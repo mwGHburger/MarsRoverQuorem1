@@ -48,16 +48,15 @@ namespace MarsRover
                 }
             }
             
-            if(square.SquareState.Equals(SquareState.Empty))
+            switch(square.SquareState)
             {
-                return "🟥";
+                case SquareState.Empty:
+                    return "🟥";
+                case SquareState.Not_Empty:
+                    return "🌋";  
+                default:
+                    return "";  
             }
-
-            if(square.SquareState.Equals(SquareState.Not_Empty))
-            {
-                return "🌋";
-            }
-            return "";
         }
     }
 }
