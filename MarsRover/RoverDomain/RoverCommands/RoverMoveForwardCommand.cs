@@ -14,6 +14,7 @@ namespace MarsRover
 
         public void Execute()
         {
+            _rover.DetectObstacleInfront(_grid);
             _rover.MoveForward(_grid);
         }
     }

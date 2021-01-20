@@ -14,6 +14,7 @@ namespace MarsRover.Tests
 
             roverTurnRightCommand.Execute();
 
+            mockRover.Verify(x => x.DetectObstacleInfront(mockGrid.Object), Times.Exactly(1));
             mockRover.Verify(x => x.MoveForward(mockGrid.Object), Times.Exactly(1));
         }
     }

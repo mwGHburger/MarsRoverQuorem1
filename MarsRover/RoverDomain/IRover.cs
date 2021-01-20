@@ -6,5 +6,7 @@ namespace MarsRover
         void TurnRight();
         void MoveForward(IGrid grid);
         void MoveBackwards(IGrid grid);
+        void DetectObstacleInfront(IGrid grid);
+        void DetectObstacleBehind(IGrid grid);
     }
 }
