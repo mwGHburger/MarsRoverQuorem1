@@ -4,5 +4,6 @@ namespace MarsRover
     {
         int Row { get; }
         int Column { get; }
+        SquareState SquareState { get; }
     }
 }
