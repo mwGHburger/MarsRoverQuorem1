@@ -24,11 +24,10 @@ namespace MarsRover
         public void Run()
         {
             _userInterface.Print(StandardMessages.WelcomeMessage);
-            _userInterface.Print("Landing Rover onto Grid...\n");
+            _userInterface.Print(StandardMessages.RoverSetup);
             _roverSetup.Setup();
-            _userInterface.Print("Creating obstacles...");
+            _userInterface.Print(StandardMessages.ObstacleSetup);
             _obstacleSetup.Setup();
-
             while(true)
             {
                 _userInterface.Print(_roverGPS.GetLocationString());
