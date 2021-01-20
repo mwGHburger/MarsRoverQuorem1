@@ -8,7 +8,7 @@ namespace MarsRover.Tests
         [Theory]
         [InlineData(4,4,16)]
         [InlineData(3,5,15)]
-        public void Grid_ShouldHaveSquaresWhenConstructed(int rows, int columns, int expected)
+        public void CreateSquares_ShouldCreateListOfSquares(int rows, int columns, int expected)
         {
             var grid = new Grid(rows, columns);
 

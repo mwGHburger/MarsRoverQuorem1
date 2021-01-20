@@ -6,7 +6,7 @@ namespace MarsRover.Tests
     public class RoverSetupTests
     {
         [Fact]
-        public void Setup_ShouldUserForInputAndConfigureTheRoverCurrentSquareLocation()
+        public void Setup_ShouldConfigureTheRoverCurrentSquareLocation()
         {
             var mockRover = new Mock<IRover>();
             var mockGrid = new Mock<IGrid>();

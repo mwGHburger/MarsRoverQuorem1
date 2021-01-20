@@ -5,7 +5,7 @@ namespace MarsRover
         public int Row { get; }
         public int Column { get; }
 
-        public SquareState SquareState { get; }
+        public SquareState SquareState { get; set; }
 
         public Square(int row, int column)
         {

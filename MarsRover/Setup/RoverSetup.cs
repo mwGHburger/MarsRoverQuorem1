@@ -1,6 +1,6 @@
 namespace MarsRover
 {
-    public class RoverSetup
+    public class RoverSetup : ISetup
     {
         private IRover _rover;
         private IGrid _grid;

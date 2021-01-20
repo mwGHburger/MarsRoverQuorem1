@@ -8,7 +8,14 @@ namespace MarsRover
         private static IGrid _grid = CreateGrid();
         public static MarsRoverApplication CreateMarsRoverApplication()
         {
-            return new MarsRoverApplication(CreateCommandLineInterface(), CreateRoverController(), CreateRoverInputValidator());
+            return new MarsRoverApplication(
+                    CreateCommandLineInterface(), 
+                    CreateRoverController(), 
+                    CreateRoverGPS(),
+                    CreateRoverInputValidator(), 
+                    CreateRoverSetup(),
+                    CreateObstacleSetup()
+                );
         }
 
         private static IUserInterface CreateCommandLineInterface()
@@ -21,6 +28,11 @@ namespace MarsRover
             return new RoverController(CreateRoverCommands());
         }
 
+        private static IRoverGPS CreateRoverGPS()
+        {
+            return new RoverGPS(_rover);
+        }
+
         private static IValidator CreateRoverInputValidator()
         {
             return new InputValidator(
@@ -30,6 +42,16 @@ namespace MarsRover
                     new InvalidCommandValidator()
                 }
             );
+        }
+
+        private static ISetup CreateRoverSetup()
+        {
+            return new RoverSetup(_rover, _grid);
+        }
+
+        private static ISetup CreateObstacleSetup()
+        {
+            return new ObstacleSetup(_grid);
         }
 
         private static List<IRoverCommand> CreateRoverCommands()
@@ -50,7 +72,7 @@ namespace MarsRover
 
         private static IGrid CreateGrid()
         {
-            return new Grid(8,8);
+            return new Grid(ApplicationProperties.NumberOfRows, ApplicationProperties.NumberOfColumns);
         }
 
         private static IObstacleDetector CreateObstacleDetector()
