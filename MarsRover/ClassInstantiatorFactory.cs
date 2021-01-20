@@ -12,6 +12,7 @@ namespace MarsRover
                     CreateCommandLineInterface(), 
                     CreateRoverController(), 
                     CreateRoverGPS(),
+                    CreateGridDisplay(),
                     CreateRoverInputValidator(), 
                     CreateRoverSetup(),
                     CreateObstacleSetup()
@@ -31,6 +32,11 @@ namespace MarsRover
         private static IRoverGPS CreateRoverGPS()
         {
             return new RoverGPS(_rover);
+        }
+
+        private static IGridDisplay CreateGridDisplay()
+        {
+            return new GridDisplay(_grid, _rover);
         }
 
         private static IValidator CreateRoverInputValidator()

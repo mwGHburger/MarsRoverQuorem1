@@ -5,15 +5,17 @@ namespace MarsRover
         private IUserInterface _userInterface;
         private IRoverController _roverController;
         private IRoverGPS _roverGPS;
+        private IGridDisplay _gridDisplay;
         private IValidator _roverInputValidator;
         private ISetup _roverSetup;
         private ISetup _obstacleSetup;
 
-        public MarsRoverApplication(IUserInterface userInterface, IRoverController roverController, IRoverGPS roverGPS, IValidator roverInputValidator, ISetup roverSetup, ISetup obstacleSetup)
+        public MarsRoverApplication(IUserInterface userInterface, IRoverController roverController, IRoverGPS roverGPS, IGridDisplay gridDisplay, IValidator roverInputValidator, ISetup roverSetup, ISetup obstacleSetup)
         {
             _userInterface = userInterface;
             _roverController = roverController;
             _roverGPS = roverGPS;
+            _gridDisplay = gridDisplay;
             _roverInputValidator = roverInputValidator;
             _roverSetup = roverSetup;
             _obstacleSetup = obstacleSetup;
@@ -28,6 +30,7 @@ namespace MarsRover
             while(true)
             {
                 _userInterface.Print(_roverGPS.GetLocationString());
+                _userInterface.Print(_gridDisplay.GetGridAsString());
                 _userInterface.Print("Please enter any valid commands (comma-separated or not):\nf - move rover forward\nb- move rover backwards\nr - turn rover right\nl - turn rover left");
                 try
                 {

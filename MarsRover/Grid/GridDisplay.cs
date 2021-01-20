@@ -1,6 +1,6 @@
 namespace MarsRover
 {
-    public class GridDisplay
+    public class GridDisplay : IGridDisplay
     {
         private IGrid _grid;
         private IRover _rover;
