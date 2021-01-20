@@ -43,7 +43,7 @@ namespace MarsRover.Tests
             var facingWest = new FacingWest();
             var grid = new Grid(4,4);
             var currentSquare = grid.Find(1,1);
-            var expected = grid.Find(1,4);
+            var expected = grid.Find(1,2);
 
             var actual = facingWest.GetSquareLocationBehind(currentSquare, grid);
 

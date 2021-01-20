@@ -22,7 +22,7 @@ namespace MarsRover
 
         public ISquare GetSquareLocationBehind(ISquare currentSquare, IGrid grid)
         {
-            var newColumn = (currentSquare.Column - 1).Equals(0) ? grid.Columns : currentSquare.Column - 1;
+            var newColumn = (currentSquare.Column + 1 > grid.Columns) ? 1 : currentSquare.Column + 1;
             return grid.Find(currentSquare.Row, newColumn);
         }
     }
