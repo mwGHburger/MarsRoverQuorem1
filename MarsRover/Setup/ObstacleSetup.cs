@@ -13,9 +13,8 @@ namespace MarsRover
             _randomiser = randomiser;
         }
 
-        public void Setup(IUserInterface userInterface)
+        public void Setup()
         {
-            userInterface.Print("Creating obstacles...");
             var maximumNumberOfObstacles = ApplicationProperties.NumberOfObstacles;
             for(var i = 1; i < maximumNumberOfObstacles; i++)
             {

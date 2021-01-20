@@ -12,7 +12,6 @@ namespace MarsRover.Tests
         {
             var mockGrid = new Mock<IGrid>();
             var mockRandomiser = new Mock<IRandomiser>();
-            var mockUserInterface = new Mock<IUserInterface>();
             var obstacleSetup = new ObstacleSetup(mockGrid.Object, mockRandomiser.Object);
             // TODO: Move to test helper
             var squares = new List<ISquare>()
@@ -30,9 +29,8 @@ namespace MarsRover.Tests
 
             mockGrid.Setup(x => x.Squares).Returns(squares);
 
-            obstacleSetup.Setup(mockUserInterface.Object);
+            obstacleSetup.Setup();
 
-            mockUserInterface.Verify(x => x.Print(It.IsAny<string>()));
             mockRandomiser.Verify(x => x.GetRandomNumber(It.IsAny<Int32>()));
         }
     }
