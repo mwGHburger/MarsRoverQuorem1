@@ -4,12 +4,12 @@ namespace MarsRover
     {
         public DirectionName Name { get; } = DirectionName.North;
         
-        public ICardinalDirection TurnLeft()
+        public ICardinalDirection GetLeftDirection()
         {
             return new FacingWest();
         }
 
-        public ICardinalDirection TurnRight()
+        public ICardinalDirection GetRightDirection()
         {
             return new FacingEast();
         }

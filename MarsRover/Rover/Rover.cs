@@ -13,12 +13,12 @@ namespace MarsRover
 
         public void TurnLeft()
         {
-            CurrentFacingDirection = CurrentFacingDirection.TurnLeft();
+            CurrentFacingDirection = CurrentFacingDirection.GetLeftDirection();
         }
 
         public void TurnRight()
         {
-            CurrentFacingDirection = CurrentFacingDirection.TurnRight();
+            CurrentFacingDirection = CurrentFacingDirection.GetRightDirection();
         }
 
         public void MoveForward(IGrid grid)

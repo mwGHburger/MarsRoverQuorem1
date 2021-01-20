@@ -9,7 +9,7 @@ namespace MarsRover.Tests
         {
             var facingSouth = new FacingSouth();
 
-            var actual = facingSouth.TurnLeft().Name;
+            var actual = facingSouth.GetLeftDirection().Name;
 
             Assert.Equal(DirectionName.East, actual);
         }
@@ -19,7 +19,7 @@ namespace MarsRover.Tests
         {
             var facingSouth = new FacingSouth();
 
-            var actual = facingSouth.TurnRight().Name;
+            var actual = facingSouth.GetRightDirection().Name;
 
             Assert.Equal(DirectionName.West, actual);
         }
