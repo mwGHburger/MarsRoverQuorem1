@@ -23,15 +23,15 @@ namespace MarsRover
 
         public void Run()
         {
+            _userInterface.Print(StandardMessages.WelcomeMessage);
             _roverSetup.Setup(_userInterface);
             _obstacleSetup.Setup(_userInterface);
-
 
             while(true)
             {
                 _userInterface.Print(_roverGPS.GetLocationString());
                 _userInterface.Print(_gridDisplay.GetGridAsString());
-                _userInterface.Print("Please enter any valid commands (comma-separated or not):\nf - move rover forward\nb- move rover backwards\nr - turn rover right\nl - turn rover left");
+                _userInterface.Print(StandardMessages.ValidCommands);
                 try
                 {
                     var userInput = _userInterface.GetInput();
