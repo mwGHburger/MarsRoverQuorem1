@@ -15,7 +15,7 @@ namespace MarsRover
         {
             userInterface.Print("Creating obstacles...");
             var random = new Random();
-            var maximumNumberOfObstacles = (_grid.Rows * _grid.Columns) / 2;
+            var maximumNumberOfObstacles = ApplicationProperties.NumberOfObstacles;
             System.Console.WriteLine(maximumNumberOfObstacles);
             for(var i = 1; i < maximumNumberOfObstacles; i++)
             {
