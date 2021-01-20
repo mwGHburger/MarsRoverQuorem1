@@ -7,7 +7,7 @@ namespace MarsRover
         public int Rows { get; }
         public int Columns { get; }
 
-        public List<Square> Squares { get; } = new List<Square>();
+        public List<ISquare> Squares { get; } = new List<ISquare>();
 
         public Grid(int rows, int columns)
         {

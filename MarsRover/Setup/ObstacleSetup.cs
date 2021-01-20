@@ -5,22 +5,22 @@ namespace MarsRover
     public class ObstacleSetup : ISetup
     {
         private IGrid _grid;
+        private IRandomiser _randomiser;
 
-        public ObstacleSetup(IGrid grid)
+        public ObstacleSetup(IGrid grid, IRandomiser randomiser)
         {
             _grid = grid;
+            _randomiser = randomiser;
         }
 
         public void Setup(IUserInterface userInterface)
         {
             userInterface.Print("Creating obstacles...");
-            var random = new Random();
             var maximumNumberOfObstacles = ApplicationProperties.NumberOfObstacles;
-            System.Console.WriteLine(maximumNumberOfObstacles);
             for(var i = 1; i < maximumNumberOfObstacles; i++)
             {
                 var emptySquares = _grid.Squares.FindAll(x => x.SquareState.Equals(SquareState.Empty));
-                var randomIndex = random.Next(i, emptySquares.Count);
+                var randomIndex = _randomiser.GetRandomNumber(emptySquares.Count);
                 var randomEmptySquare = emptySquares[randomIndex];
                 randomEmptySquare.SquareState = SquareState.Not_Empty;
             }

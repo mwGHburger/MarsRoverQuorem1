@@ -51,7 +51,7 @@ namespace MarsRover
 
         private static ISetup CreateObstacleSetup()
         {
-            return new ObstacleSetup(_grid);
+            return new ObstacleSetup(_grid, CreateRandomiser());
         }
 
         private static List<IRoverCommand> CreateRoverCommands()
@@ -78,6 +78,11 @@ namespace MarsRover
         private static IObstacleDetector CreateObstacleDetector()
         {
             return new ObstacleDetector();
+        }
+
+        private static IRandomiser CreateRandomiser()
+        {
+            return new Randomiser();
         }
     }
 }
