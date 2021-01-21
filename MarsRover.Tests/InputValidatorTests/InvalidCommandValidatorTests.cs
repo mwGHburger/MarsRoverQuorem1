@@ -6,6 +6,7 @@ namespace MarsRover.Tests
     {
         [Theory]
         [InlineData("z")]
+        [InlineData("af")]
         public void Validate_ShouldThrow_InvalidCommandException_ForInvalidRoverCommands(string input)
         {
             var invalidCommandValidator = new InvalidCommandValidator();
