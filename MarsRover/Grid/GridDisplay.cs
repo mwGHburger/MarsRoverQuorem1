@@ -26,7 +26,6 @@ namespace MarsRover
                     gridString = "\n" + gridRow + gridString;
                     gridRow = "";
                 }
-
             }
             return gridString;
         }
