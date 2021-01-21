@@ -8,11 +8,12 @@ namespace MarsRover.Tests
         public void GetRandomNumber_ShouldReturnRandomNumberWithinARange()
         {
             var randomiser = new Randomiser();
+            var minimumNumber = 1;
             var maximumNumber = 10;
 
             var actual = randomiser.GetRandomNumber(maximumNumber);
 
-            Assert.InRange(actual, 1, maximumNumber);
+            Assert.InRange(actual, minimumNumber, maximumNumber);
         }
     }
 }

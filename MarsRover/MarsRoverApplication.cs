@@ -31,7 +31,7 @@ namespace MarsRover
             while(true)
             {
                 _userInterface.Print(_roverGPS.GetLocationString());
-                _userInterface.Print(_gridDisplay.GetGridAsString());
+                _userInterface.Print(_gridDisplay.GetGridString());
                 _userInterface.Print(StandardMessages.ValidCommands);
                 try
                 {

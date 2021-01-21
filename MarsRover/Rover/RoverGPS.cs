@@ -10,7 +10,7 @@ namespace MarsRover
         }
         public string GetLocationString()
         {
-            return $"Rover is currently at {_rover.CurrentSquareLocation.Row}, {_rover.CurrentSquareLocation.Column} facing {_rover.CurrentFacingDirection.Name}";
+            return $"Rover is currently at {_rover.CurrentSquareLocation.Column}, {_rover.CurrentSquareLocation.Row} facing {_rover.CurrentFacingDirection.Name}";
         }
     }
 }

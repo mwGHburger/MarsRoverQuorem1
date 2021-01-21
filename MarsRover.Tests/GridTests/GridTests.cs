@@ -5,6 +5,7 @@ namespace MarsRover.Tests
 {
     public class GridTests
     {
+        // TODO: revisit
         [Theory]
         [InlineData(4,4,16)]
         [InlineData(3,5,15)]
@@ -20,7 +21,7 @@ namespace MarsRover.Tests
         [Fact]
         public void Find_ShouldReturnASquare_GivenRowAndColumnLocations()
         {
-            var grid = new Grid(4,4);
+            var grid = TestHelper.SetupGrid();
 
             var actual = grid.Find(2,3);
 

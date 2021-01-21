@@ -2,6 +2,6 @@ namespace MarsRover
 {
     public interface IGridDisplay
     {
-        string GetGridAsString();
+        string GetGridString();
     }
 }
