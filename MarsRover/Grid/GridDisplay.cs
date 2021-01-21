@@ -10,7 +10,7 @@ namespace MarsRover
             _grid = grid;
             _rover = rover;
         }
-        public string GetGridAsString()
+        public string GetGridString()
         {
             var gridString = "";
             var gridRow = "";

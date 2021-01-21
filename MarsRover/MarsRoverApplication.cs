@@ -1,3 +1,4 @@
+using System;
 namespace MarsRover
 {
     public class MarsRoverApplication
@@ -23,15 +24,11 @@ namespace MarsRover
 
         public void Run()
         {
-            _userInterface.Print(StandardMessages.WelcomeMessage);
-            _userInterface.Print(StandardMessages.RoverSetup);
-            _roverSetup.Setup();
-            _userInterface.Print(StandardMessages.ObstacleSetup);
-            _obstacleSetup.Setup();
+            Setup();
             while(true)
             {
                 _userInterface.Print(_roverGPS.GetLocationString());
-                _userInterface.Print(_gridDisplay.GetGridAsString());
+                _userInterface.Print(_gridDisplay.GetGridString());
                 _userInterface.Print(StandardMessages.ValidCommands);
                 try
                 {
@@ -43,20 +40,32 @@ namespace MarsRover
                 }
                 catch(EmptyInputException ex)
                 {
-                    _userInterface.ClearScreen();
-                    _userInterface.Print(ex.Message);
+                    HandleException(ex);
                 }
                 catch(InvalidCommandException ex)
                 {
-                    _userInterface.ClearScreen();
-                    _userInterface.Print(ex.Message);
+                    HandleException(ex);
                 }
                 catch(RoverMovementException ex)
                 {
-                    _userInterface.ClearScreen();
-                    _userInterface.Print(ex.Message);
+                    HandleException(ex);
                 }
             }
+        }
+
+        private void Setup()
+        {
+            _userInterface.Print(StandardMessages.WelcomeMessage);
+            _userInterface.Print(StandardMessages.RoverSetup);
+            _roverSetup.Setup();
+            _userInterface.Print(StandardMessages.ObstacleSetup);
+            _obstacleSetup.Setup();
+        }
+
+        private void HandleException(Exception exception)
+        {
+            _userInterface.ClearScreen();
+            _userInterface.Print(exception.Message);
         }
     }
 }

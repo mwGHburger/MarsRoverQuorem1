@@ -8,7 +8,7 @@ namespace MarsRover.Tests
         [Fact]
         public void GetGridAsString()
         {
-            var grid = new Grid(4,4);
+            var grid = TestHelper.SetupGrid();
             var mockRover = new Mock<IRover>();
             var roverLocation = grid.Find(1,1);
             var obstacleLocation = grid.Find(2,2);
@@ -19,7 +19,7 @@ namespace MarsRover.Tests
             mockRover.Setup(x => x.CurrentFacingDirection).Returns(new FacingEast());
             mockRover.Setup(x => x.CurrentSquareLocation).Returns(roverLocation);
             
-            var actual = gridView.GetGridAsString();
+            var actual = gridView.GetGridString();
 
             Assert.Equal(expected, actual);
         }
