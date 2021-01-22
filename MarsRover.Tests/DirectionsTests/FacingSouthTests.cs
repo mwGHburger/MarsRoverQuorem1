@@ -4,11 +4,11 @@ namespace MarsRover.Tests
 {
     public class FacingSouthTests
     {
+        ICardinalDirection facingSouth = new FacingSouth();
+        
         [Fact]
         public void GetLeftDirection_ShouldReturn_DirectionFacingNorth()
         {
-            var facingSouth = new FacingSouth();
-
             var actual = facingSouth.GetLeftDirection().Name;
 
             Assert.Equal(DirectionName.East, actual);
@@ -17,8 +17,6 @@ namespace MarsRover.Tests
         [Fact]
         public void GetRightDirection_ShouldReturn_DirectionFacingSouth()
         {
-            var facingSouth = new FacingSouth();
-
             var actual = facingSouth.GetRightDirection().Name;
 
             Assert.Equal(DirectionName.West, actual);
@@ -27,7 +25,6 @@ namespace MarsRover.Tests
         [Fact]
         public void GetSquareLocationInfront_ShouldReturn_SquareBelow()
         {
-            var facingSouth = new FacingSouth();
             var grid = TestHelper.SetupGrid();
             var currentSquare = grid.Find(1,1);
             var expected = grid.Find(4,1);
@@ -40,7 +37,6 @@ namespace MarsRover.Tests
         [Fact]
         public void GetSquareLocationBehind_ShouldReturn_SquareAbove()
         {
-            var facingSouth = new FacingSouth();
             var grid = TestHelper.SetupGrid();
             var currentSquare = grid.Find(1,1);
             var expected = grid.Find(2,1);
