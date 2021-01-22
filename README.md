@@ -13,7 +13,7 @@ git --version
 ```
 
 You will need to have an Intergrated Development Environment (IDE). Here are some recommended IDEs:
-- [Visual Studio Code](https://code.visualstudio.com/) (You will need the extensionC# for Visual Studio Code (powered by OmniSharp))
+- [Visual Studio Code](https://code.visualstudio.com/) (You will need the extension: C# for Visual Studio Code (powered by OmniSharp))
 - [Visual Studio](https://visualstudio.microsoft.com/vs/)
 - [Rider](https://www.jetbrains.com/rider/)
 
