@@ -1,7 +1,9 @@
-# MYOB Quorem - Language Design Problems
-This repository holds my application that I will using for my first Quorem Review. This console-based application is inspired by the [Mars Rover Kata](https://github.com/MYOB-Technology/General_Developer/blob/main/katas/kata-mars-rover/kata-mars-rover.md). 
+# MYOB Quorem Review - Language Design Problems
+This repository holds my application that I will be using for my first Quorem Review (MYOB). This application aims demonstrate my knowledge and illustrate the concepts I have learned throughout my experience in the Future Makers Academy - Acceleration Phase so far.
 
-The programming language used in this project are as follow:
+This console-based application is inspired by the [Mars Rover Kata](https://github.com/MYOB-Technology/General_Developer/blob/main/katas/kata-mars-rover/kata-mars-rover.md) - it provides an interface for a user to interact with a rover and naivgate it around on a grid. 
+
+The programming language used in this project:
 - C#
 
 ## Setup and Installation
