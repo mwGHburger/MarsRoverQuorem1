@@ -14,7 +14,10 @@ namespace MarsRover.Tests
             var obstacleLocation = grid.Find(2,2);
             obstacleLocation.SquareState = SquareState.Not_Empty;
             var gridView = new GridDisplay(grid, mockRover.Object);
-            var expected = "\n🟥🟥🟥🟥\n🟥🟥🟥🟥\n🟥🌋🟥🟥\n⏩🟥🟥🟥";
+            var expected = "\n🟥🟥🟥🟥" +
+                           "\n🟥🟥🟥🟥" +
+                           "\n🟥🌋🟥🟥" +
+                           "\n⏩🟥🟥🟥";
 
             mockRover.Setup(x => x.CurrentFacingDirection).Returns(new FacingEast());
             mockRover.Setup(x => x.CurrentSquareLocation).Returns(roverLocation);
