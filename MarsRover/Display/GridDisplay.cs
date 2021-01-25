@@ -1,6 +1,6 @@
 namespace MarsRover
 {
-    public class GridDisplay : IGridDisplay
+    public class GridDisplay : IDisplay
     {
         private IGrid _grid;
         private IRover _rover;
@@ -10,7 +10,7 @@ namespace MarsRover
             _grid = grid;
             _rover = rover;
         }
-        public string GetGridString()
+        public string GetDisplayString()
         {
             var gridString = "";
             var gridRow = "";

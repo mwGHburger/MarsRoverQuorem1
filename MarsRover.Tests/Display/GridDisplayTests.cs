@@ -22,7 +22,7 @@ namespace MarsRover.Tests
             mockRover.Setup(x => x.CurrentFacingDirection).Returns(new FacingEast());
             mockRover.Setup(x => x.CurrentSquareLocation).Returns(roverLocation);
             
-            var actual = gridView.GetGridString();
+            var actual = gridView.GetDisplayString();
 
             Assert.Equal(expected, actual);
         }

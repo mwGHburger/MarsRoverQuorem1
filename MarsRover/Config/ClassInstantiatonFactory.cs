@@ -29,12 +29,12 @@ namespace MarsRover
             return new RoverController(CreateRoverCommands());
         }
 
-        private static IRoverGPS CreateRoverGPS()
+        private static IDisplay CreateRoverGPS()
         {
-            return new RoverGPS(_rover);
+            return new RoverGPSDisplay(_rover);
         }
 
-        private static IGridDisplay CreateGridDisplay()
+        private static IDisplay CreateGridDisplay()
         {
             return new GridDisplay(_grid, _rover);
         }
