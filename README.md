@@ -34,3 +34,7 @@ Run the application using the terminal command:
 ```
 dotnet run
 ```
+
+## Class Diagram
+To help you better visualise the application structure:
+![Quorem_1_Mars_Rover-Class Diagram](https://user-images.githubusercontent.com/51487671/105864567-2df5e900-6046-11eb-9028-8ad4dd344512.jpg)
