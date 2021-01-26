@@ -23,9 +23,11 @@ namespace MarsRover
 
         private void CreateSquares()
         {
-            for(var row = 1; row <= Rows; row++)
+            var smallestRow = 1;
+            var smallestColumn = 1;
+            for(var row = smallestRow; row <= Rows; row++)
             {
-                for(var column = 1; column <= Columns; column++)
+                for(var column = smallestColumn; column <= Columns; column++)
                 {
                     Squares.Add(new Square(row, column));
                 }
