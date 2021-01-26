@@ -36,5 +36,8 @@ dotnet run
 ```
 
 ## Class Diagram
-To help you better visualise the application structure:
+A visual aid for the application.
 ![Quorem_1_Mars_Rover-Class Diagram](https://user-images.githubusercontent.com/51487671/105864567-2df5e900-6046-11eb-9028-8ad4dd344512.jpg)
+
+## Flow Chart
+![Quorem_1_Mars_Rover-Flowchart](https://user-images.githubusercontent.com/51487671/105865192-c7bd9600-6046-11eb-8af0-acbe132f2468.jpg)
