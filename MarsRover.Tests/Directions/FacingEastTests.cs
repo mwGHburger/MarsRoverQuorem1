@@ -5,6 +5,7 @@ namespace MarsRover.Tests
     public class FacingEastTests
     {
         ICardinalDirection facingEast = new FacingEast();
+        IGrid grid = new Grid(4,4);
 
         [Fact]
         public void GetLeftDirection_ShouldReturn_DirectionFacingNorth()
@@ -22,24 +23,26 @@ namespace MarsRover.Tests
             Assert.Equal(DirectionName.South, actual);
         }
 
-        [Fact]
-        public void GetSquareLocationInfront_ShouldReturn_SquareToTheRight()
+        [Theory]
+        [InlineData(1,1,1,2)]
+        [InlineData(2,2,2,3)]
+        public void GetSquareLocationInfront_ShouldReturn_SquareToTheRight(int startingRow, int startingColumn, int expectedRow, int expectedColumn)
         {
-            var grid = TestHelper.SetupGrid();
-            var currentSquare = grid.Find(1,1);
-            var expected = grid.Find(1,2);
+            var currentSquare = grid.Find(startingRow,startingColumn);
+            var expected = grid.Find(expectedRow,expectedColumn);
 
             var actual = facingEast.GetSquareLocationInfront(currentSquare, grid);
 
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
-        public void GetSquareLocationBehind_ShouldReturn_SquareToTheLeft()
+        [Theory]
+        [InlineData(1,1,1,4)]
+        [InlineData(2,2,2,1)]
+        public void GetSquareLocationBehind_ShouldReturn_SquareToTheLeft(int startingRow, int startingColumn, int expectedRow, int expectedColumn)
         {
-            var grid = TestHelper.SetupGrid();
-            var currentSquare = grid.Find(1,1);
-            var expected = grid.Find(1,4);
+            var currentSquare = grid.Find(startingRow,startingColumn);
+            var expected = grid.Find(expectedRow,expectedColumn);
 
             var actual = facingEast.GetSquareLocationBehind(currentSquare, grid);
 

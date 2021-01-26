@@ -3,14 +3,14 @@ using Xunit;
 
 namespace MarsRover.Tests
 {
-    public class RoverMoveBackwardsCommandTests
+    public class MoveBackwardsCommandTests
     {
         [Fact]
         public void Execute_ShouldCallTheTurnLeftMethodOnRover()
         {
             var mockRover = new Mock<IRover>();
             var mockGrid = new Mock<IGrid>();
-            var roverTurnRightCommand = new RoverMoveBackwardsCommand(mockRover.Object, mockGrid.Object);
+            var roverTurnRightCommand = new MoveBackwardsCommand(mockRover.Object, mockGrid.Object);
 
             roverTurnRightCommand.Execute();
 

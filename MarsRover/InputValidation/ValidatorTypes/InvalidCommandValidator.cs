@@ -12,7 +12,7 @@ namespace MarsRover
             {
                 if(!ApplicationProperties.ValidRoverCommands.Contains(inputCommand))
                 {
-                    throw new InvalidCommandException("You have entered an invalid rover command. Rover will do nothing.");
+                    throw new InvalidCommandException(StandardMessages.InvalidCommandExceptionMessage);
                 }
             }
         }

@@ -5,17 +5,17 @@ namespace MarsRover
     {
         private IUserInterface _userInterface;
         private IRoverController _roverController;
-        private IRoverGPS _roverGPS;
-        private IGridDisplay _gridDisplay;
+        private IDisplay _roverGPSDisplay;
+        private IDisplay _gridDisplay;
         private IValidator _roverInputValidator;
         private ISetup _roverSetup;
         private ISetup _obstacleSetup;
 
-        public MarsRoverApplication(IUserInterface userInterface, IRoverController roverController, IRoverGPS roverGPS, IGridDisplay gridDisplay, IValidator roverInputValidator, ISetup roverSetup, ISetup obstacleSetup)
+        public MarsRoverApplication(IUserInterface userInterface, IRoverController roverController, IDisplay roverGPSDisplay, IDisplay gridDisplay, IValidator roverInputValidator, ISetup roverSetup, ISetup obstacleSetup)
         {
             _userInterface = userInterface;
             _roverController = roverController;
-            _roverGPS = roverGPS;
+            _roverGPSDisplay = roverGPSDisplay;
             _gridDisplay = gridDisplay;
             _roverInputValidator = roverInputValidator;
             _roverSetup = roverSetup;
@@ -27,8 +27,8 @@ namespace MarsRover
             Setup();
             while(true)
             {
-                _userInterface.Print(_roverGPS.GetLocationString());
-                _userInterface.Print(_gridDisplay.GetGridString());
+                _userInterface.Print(_roverGPSDisplay.GetDisplayString());
+                _userInterface.Print(_gridDisplay.GetDisplayString());
                 _userInterface.Print(StandardMessages.ValidCommands);
                 try
                 {
@@ -38,17 +38,17 @@ namespace MarsRover
                     _roverController.ExecuteInputCommands(commands);
                     _userInterface.ClearScreen();
                 }
-                catch(EmptyInputException ex)
+                catch(EmptyInputException exception)
                 {
-                    HandleException(ex);
+                    HandleException(exception);
                 }
-                catch(InvalidCommandException ex)
+                catch(InvalidCommandException exception)
                 {
-                    HandleException(ex);
+                    HandleException(exception);
                 }
-                catch(RoverMovementException ex)
+                catch(RoverMovementException exception)
                 {
-                    HandleException(ex);
+                    HandleException(exception);
                 }
             }
         }

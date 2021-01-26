@@ -29,12 +29,12 @@ namespace MarsRover
             return new RoverController(CreateRoverCommands());
         }
 
-        private static IRoverGPS CreateRoverGPS()
+        private static IDisplay CreateRoverGPS()
         {
-            return new RoverGPS(_rover);
+            return new RoverGPSDisplay(_rover);
         }
 
-        private static IGridDisplay CreateGridDisplay()
+        private static IDisplay CreateGridDisplay()
         {
             return new GridDisplay(_grid, _rover);
         }
@@ -64,10 +64,10 @@ namespace MarsRover
         {
             return new List<IRoverCommand>()
             {
-                new RoverTurnLeftCommand(_rover),
-                new RoverTurnRightCommand(_rover),
-                new RoverMoveForwardCommand(_rover, _grid),
-                new RoverMoveBackwardsCommand(_rover, _grid)
+                new TurnLeftCommand(_rover),
+                new TurnRightCommand(_rover),
+                new MoveForwardCommand(_rover, _grid),
+                new MoveBackwardsCommand(_rover, _grid)
             };
         }
 
