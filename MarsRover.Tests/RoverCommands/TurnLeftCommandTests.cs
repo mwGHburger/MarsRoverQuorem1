@@ -3,13 +3,13 @@ using Xunit;
 
 namespace MarsRover.Tests
 {
-    public class RoverTurnLeftCommandTests
+    public class TurnLeftCommandTests
     {
         [Fact]
         public void Execute_ShouldCallTheTurnLeftMethodOnRover()
         {
             var mockRover = new Mock<IRover>();
-            var roverTurnLeftCommand = new RoverTurnLeftCommand(mockRover.Object);
+            var roverTurnLeftCommand = new TurnLeftCommand(mockRover.Object);
 
             roverTurnLeftCommand.Execute();
 

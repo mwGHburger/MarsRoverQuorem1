@@ -8,7 +8,7 @@ namespace MarsRover.Tests
         [Fact]
         public void GetGridAsString()
         {
-            var grid = TestHelper.SetupGrid();
+            var grid = new Grid(4,4);
             var mockRover = new Mock<IRover>();
             var roverLocation = grid.Find(1,1);
             var obstacleLocation = grid.Find(2,2);

@@ -7,7 +7,7 @@ namespace MarsRover
             var squareInfront = currentDirection.GetSquareLocationInfront(currentSquare, grid);
             if(squareInfront.SquareState.Equals(SquareState.Not_Empty))
             {
-                throw new RoverMovementException("Obstacle detected infront of Rover. Rover cannot move forward.");
+                throw new RoverMovementException(StandardMessages.DetectedObstacleInfront);
             }
         }
 
@@ -16,7 +16,7 @@ namespace MarsRover
             var squareInfront = currentDirection.GetSquareLocationBehind(currentSquare, grid);
             if(squareInfront.SquareState.Equals(SquareState.Not_Empty))
             {
-                throw new RoverMovementException("Obstacle detected behind the Rover. Rover cannot move backwards.");
+                throw new RoverMovementException(StandardMessages.DetectedObstacleBehind);
             }
         }
     }

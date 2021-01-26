@@ -13,13 +13,21 @@ namespace MarsRover.Tests
             var mockGrid = new Mock<IGrid>();
             var mockRandomiser = new Mock<IRandomiser>();
             var obstacleSetup = new ObstacleSetup(mockGrid.Object, mockRandomiser.Object);
-            var squares = TestHelper.SetupSquares();
+            var mockSquare = new Mock<ISquare>();
 
-            mockGrid.Setup(x => x.Squares).Returns(squares);
+            mockSquare.Setup(x => x.SquareState).Returns(SquareState.Empty);
+
+            var mockSquares = new List<ISquare>()
+            {
+                mockSquare.Object
+            };
+
+            mockGrid.Setup(x => x.Squares).Returns(mockSquares);
 
             obstacleSetup.Setup();
 
             mockRandomiser.Verify(x => x.GetRandomNumber(It.IsAny<Int32>()));
+            mockSquare.VerifySet(x => x.SquareState = SquareState.Not_Empty);
         }
     }
 }

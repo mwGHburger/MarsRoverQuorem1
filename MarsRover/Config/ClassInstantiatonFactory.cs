@@ -64,10 +64,10 @@ namespace MarsRover
         {
             return new List<IRoverCommand>()
             {
-                new RoverTurnLeftCommand(_rover),
-                new RoverTurnRightCommand(_rover),
-                new RoverMoveForwardCommand(_rover, _grid),
-                new RoverMoveBackwardsCommand(_rover, _grid)
+                new TurnLeftCommand(_rover),
+                new TurnRightCommand(_rover),
+                new MoveForwardCommand(_rover, _grid),
+                new MoveBackwardsCommand(_rover, _grid)
             };
         }
 

@@ -1,12 +1,12 @@
 namespace MarsRover
 {
-    public class RoverMoveBackwardsCommand : IRoverCommand
+    public class MoveBackwardsCommand : IRoverCommand
     {
         public char KeyCommand { get; } = 'b';
         private IRover _rover;
         private IGrid _grid;
         
-        public RoverMoveBackwardsCommand(IRover rover, IGrid grid)
+        public MoveBackwardsCommand(IRover rover, IGrid grid)
         {
             _rover = rover;
             _grid = grid;

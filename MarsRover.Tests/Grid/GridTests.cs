@@ -5,13 +5,12 @@ namespace MarsRover.Tests
 {
     public class GridTests
     {
-        // TODO: revisit
-        [Theory]
-        [InlineData(4,4,16)]
-        [InlineData(3,5,15)]
-        public void CreateSquares_ShouldCreateListOfSquares(int rows, int columns, int expected)
+        IGrid grid = new Grid(8,8);
+
+        [Fact]
+        public void CreateSquares_ShouldCreateListOfSquares()
         {
-            var grid = new Grid(rows, columns);
+            var expected = 64;
 
             var actual = grid.Squares.Count;
 
@@ -21,8 +20,6 @@ namespace MarsRover.Tests
         [Fact]
         public void Find_ShouldReturnASquare_GivenRowAndColumnLocations()
         {
-            var grid = TestHelper.SetupGrid();
-
             var actual = grid.Find(2,3);
 
             Assert.Equal(2, actual.Row);

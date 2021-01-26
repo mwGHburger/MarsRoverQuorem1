@@ -38,17 +38,17 @@ namespace MarsRover
                     _roverController.ExecuteInputCommands(commands);
                     _userInterface.ClearScreen();
                 }
-                catch(EmptyInputException ex)
+                catch(EmptyInputException exception)
                 {
-                    HandleException(ex);
+                    HandleException(exception);
                 }
-                catch(InvalidCommandException ex)
+                catch(InvalidCommandException exception)
                 {
-                    HandleException(ex);
+                    HandleException(exception);
                 }
-                catch(RoverMovementException ex)
+                catch(RoverMovementException exception)
                 {
-                    HandleException(ex);
+                    HandleException(exception);
                 }
             }
         }

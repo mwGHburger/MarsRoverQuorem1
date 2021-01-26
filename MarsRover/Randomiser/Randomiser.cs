@@ -6,8 +6,9 @@ namespace MarsRover
     {
         public int GetRandomNumber(int maximumNumber)
         {
+            var minimumNumber = 1;
             var random = new Random();
-            return random.Next(1,maximumNumber);
+            return random.Next(minimumNumber, maximumNumber);
         }
     }
 }

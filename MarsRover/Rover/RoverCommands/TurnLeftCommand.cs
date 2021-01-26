@@ -1,11 +1,11 @@
 namespace MarsRover
 {
-    public class RoverTurnLeftCommand : IRoverCommand
+    public class TurnLeftCommand : IRoverCommand
     {
         public char KeyCommand { get; } = 'l';
         private IRover _rover;
 
-        public RoverTurnLeftCommand(IRover rover)
+        public TurnLeftCommand(IRover rover)
         {
             _rover = rover;
         }

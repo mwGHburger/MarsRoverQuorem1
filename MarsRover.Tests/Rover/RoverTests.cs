@@ -15,7 +15,6 @@ namespace MarsRover.Tests
             rover.TurnLeft();
 
             mockDirection.Verify(x => x.GetLeftDirection(), Times.Exactly(1));
-
         }
 
         [Fact]

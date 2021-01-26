@@ -7,7 +7,7 @@ namespace MarsRover
         {
             if(String.IsNullOrWhiteSpace(input))
             {
-                throw new EmptyInputException("You have entered nothing. Rover will do nothing");
+                throw new EmptyInputException(StandardMessages.EmptyInputExceptionMessage);
             }
         }
     }
