@@ -18,12 +18,12 @@ namespace MarsRover.Tests
         }
 
         [Fact]
-        public void Find_ShouldReturnASquare_GivenRowAndColumnLocations()
+        public void FindSquare_ShouldReturnASquare_GivenRowAndColumnLocations()
         {
             var expectedRow = 2;
             var expectedColumn = 3;
 
-            var actual = grid.Find(2,3);
+            var actual = grid.FindSquare(2,3);
 
             Assert.Equal(expectedRow, actual.Row);
             Assert.Equal(expectedColumn, actual.Column);

@@ -10,8 +10,8 @@ namespace MarsRover.Tests
         {
             var grid = new Grid(4,4);
             var mockRover = new Mock<IRover>();
-            var roverLocation = grid.Find(1,1);
-            var obstacleLocation = grid.Find(2,2);
+            var roverLocation = grid.FindSquare(1,1);
+            var obstacleLocation = grid.FindSquare(2,2);
             obstacleLocation.SquareState = SquareState.Not_Empty;
             var gridView = new GridDisplay(grid, mockRover.Object);
             var expected = "\n🟥🟥🟥🟥" +
