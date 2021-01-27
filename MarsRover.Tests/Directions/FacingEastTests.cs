@@ -28,8 +28,8 @@ namespace MarsRover.Tests
         [InlineData(2,2,2,3)]
         public void GetSquareLocationInfront_ShouldReturn_SquareToTheRight(int startingRow, int startingColumn, int expectedRow, int expectedColumn)
         {
-            var currentSquare = grid.Find(startingRow,startingColumn);
-            var expected = grid.Find(expectedRow,expectedColumn);
+            var currentSquare = grid.FindSquare(startingRow,startingColumn);
+            var expected = grid.FindSquare(expectedRow,expectedColumn);
 
             var actual = facingEast.GetSquareLocationInfront(currentSquare, grid);
 
@@ -41,8 +41,8 @@ namespace MarsRover.Tests
         [InlineData(2,2,2,1)]
         public void GetSquareLocationBehind_ShouldReturn_SquareToTheLeft(int startingRow, int startingColumn, int expectedRow, int expectedColumn)
         {
-            var currentSquare = grid.Find(startingRow,startingColumn);
-            var expected = grid.Find(expectedRow,expectedColumn);
+            var currentSquare = grid.FindSquare(startingRow,startingColumn);
+            var expected = grid.FindSquare(expectedRow,expectedColumn);
 
             var actual = facingEast.GetSquareLocationBehind(currentSquare, grid);
 

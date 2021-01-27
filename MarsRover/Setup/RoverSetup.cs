@@ -13,7 +13,7 @@ namespace MarsRover
 
         public void Setup()
         {
-            var startingSquareLocation = _grid.Find(1,1);
+            var startingSquareLocation = _grid.FindSquare(1,1);
             _rover.CurrentSquareLocation = startingSquareLocation;
         }
     }

@@ -16,7 +16,7 @@ namespace MarsRover
             CreateSquares();
         }
 
-        public ISquare Find(int row, int column)
+        public ISquare FindSquare(int row, int column)
         {
             return Squares.Find(x => x.Row.Equals(row) && x.Column.Equals(column));
         }

@@ -6,7 +6,7 @@ namespace MarsRover
     {
         int Rows { get; }
         int Columns { get; }
-        ISquare Find(int row, int column);
+        ISquare FindSquare(int row, int column);
         List<ISquare> Squares { get; }
     }
 }
